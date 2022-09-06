@@ -191,6 +191,10 @@
     <Compile Include="Migrations\202209061101324_addedContactName.designer.cs">
       <DependentUpon>202209061101324_addedContactName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202209061356582_addedListOfBooks.cs" />
+    <Compile Include="Migrations\202209061356582_addedListOfBooks.designer.cs">
+      <DependentUpon>202209061356582_addedListOfBooks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
@@ -289,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202209061101324_addedContactName.resx">
       <DependentUpon>202209061101324_addedContactName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209061356582_addedListOfBooks.resx">
+      <DependentUpon>202209061356582_addedListOfBooks.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
