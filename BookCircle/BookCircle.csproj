@@ -169,6 +169,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -177,6 +178,18 @@
     <Compile Include="Migrations\202209061002384_InitialCreate.cs" />
     <Compile Include="Migrations\202209061002384_InitialCreate.designer.cs">
       <DependentUpon>202209061002384_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209061008496_initial.cs" />
+    <Compile Include="Migrations\202209061008496_initial.designer.cs">
+      <DependentUpon>202209061008496_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209061011544_addedBooks.cs" />
+    <Compile Include="Migrations\202209061011544_addedBooks.designer.cs">
+      <DependentUpon>202209061011544_addedBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209061101324_addedContactName.cs" />
+    <Compile Include="Migrations\202209061101324_addedContactName.designer.cs">
+      <DependentUpon>202209061101324_addedContactName.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -242,6 +255,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Books\Create.cshtml" />
+    <Content Include="Views\Books\Delete.cshtml" />
+    <Content Include="Views\Books\Details.cshtml" />
+    <Content Include="Views\Books\Edit.cshtml" />
+    <Content Include="Views\Books\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -262,6 +280,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202209061002384_InitialCreate.resx">
       <DependentUpon>202209061002384_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209061008496_initial.resx">
+      <DependentUpon>202209061008496_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209061011544_addedBooks.resx">
+      <DependentUpon>202209061011544_addedBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209061101324_addedContactName.resx">
+      <DependentUpon>202209061101324_addedContactName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
