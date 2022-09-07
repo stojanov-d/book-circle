@@ -7,31 +7,62 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+    <style>
+        @@font-face {
+            font-family: "Medio";
+            src: url('C:\Users\stoja\source\repos\BookCircle\BookCircle\fonts\Medio.woff');
+        }
+
+        .mediotext {
+            font-family: "Medio";
+        }
+
+        .navbar-custom {
+            background-color: #07f0ec;
+        }
+
+        .white-text{
+            color:white;
+        }
+
+        .remove-bg:hover{
+            background:none;
+        }
+
+        .my-container {
+            padding-right: 10px;
+            padding-left: 10px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    </style>
+
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+        <div class="my-container" >
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Book Circle", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("BOOK CIRCLE", "Index", "Home", new { area = "" }, new { @class = "navbar-brand mediotext white-text"})
             </div>
+
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { @class= "white-text remove-bg" })</li>
                     <li>@Html.ActionLink("Books","Index","Books")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { @class = " white-text" })</li>
                 </ul>
                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="body-content">
         @RenderBody()
-        <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
