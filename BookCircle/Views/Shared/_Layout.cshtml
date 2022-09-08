@@ -40,7 +40,7 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-custom navbar-fixed-top">
         <div class="my-container" >
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -53,8 +53,8 @@
 
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { @class= "white-text remove-bg" })</li>
-                    <li>@Html.ActionLink("Books","Index","Books")</li>
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { @class= "white-text" })</li>
+                    <li>@Html.ActionLink("Books","Index","Books", new { @class = "white-text" })</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home", new { @class = " white-text" })</li>
                 </ul>
                @Html.Partial("_LoginPartial")
