@@ -221,6 +221,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\CocogooseClassicTrial-Medium.svg" />
     <Content Include="fonts\Medio.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -256,6 +257,10 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="fonts\cocogoose-classic-trial.medium.eot" />
+    <Content Include="fonts\cocogoose-classic-trial.medium.woff2" />
+    <Content Include="fonts\CocogooseClassicTrial-Medium.ttf" />
+    <Content Include="fonts\CocogooseClassicTrial-Medium.woff" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

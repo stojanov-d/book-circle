@@ -10,24 +10,41 @@
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     @Scripts.Render("~/bundles/modernizr")
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <style>
         @@font-face {
-            font-family: "Medio";
-            src: url('C:\Users\stoja\source\repos\BookCircle\BookCircle\fonts\Medio.woff');
+            font-family: "Cocogoose";
+            src: url('C:\Users\stoja\source\repos\BookCircle\BookCircle\fonts\CocogooseClassicTrial-Medium.ttf');
         }
 
-        .mediotext {
-            font-family: "Medio";
+        .oswald-font {
+            font-family: "Oswald";
+        }
+
+        .raleway-font{
+            font-family:"Raleway";
         }
 
         .navbar-custom {
-            background-color: #07f0ec;
+            background-color: #DEB887;
         }
 
         .white-text {
             color: white !important;
         }
+
+        .black-text {
+            color: black !important;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+            .black-text:hover {
+                color: white !important;
+                letter-spacing: 1px;
+            }
 
         .remove-bg:hover {
             background: none;
@@ -61,7 +78,7 @@
         }
 
         .padding-for-partials {
-            padding-right: 20px !important;
+            padding-right: 30px !important;
         }
     </style>
 
@@ -72,12 +89,11 @@
         <div class="container-fluid">
 
             @*<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>*@
+                    <span class="navbar-toggler-icon"></span>
+                </button>*@
             <div class="collapse navbar-collapse navbar-padding-top" id="navbarNavAltMarkup">
                 <div class="navbar-nav ">
-                    @Html.ActionLink("BOOK CIRCLE", "Index", "Home", new { @class = "mediotext navbar-brand navlinks-size" })
-                    @Html.ActionLink("About","About","Home", new {@class="nav-link"})
+                    @Html.ActionLink("BOOK CIRCLE", "Index", "Home", "Home", new { @class = " navbar-brand black-text oswald-font" })
                 </div>
             </div>
             @Html.Partial("_LoginPartial")

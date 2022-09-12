@@ -22,21 +22,21 @@
                                     @Html.AntiForgeryToken()
                                     <div class="d-flex align-items-center mb-3 pb-1">
                                         <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
-                                        <span class="h1 fw-bold mb-0">Log in</span>
+                                        <span class="h1 fw-bold mb-0 raleway-font">Log in</span>
                                     </div>
 
-                                    <h4 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h4>
+                                    <h4 class="fw-normal mb-3 pb-3 raleway-font" style="letter-spacing: 1px;">Sign into your account</h4>
                                     <hr />
                                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                     <div class="form-group form-outline mb-4">
-                                        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label raleway-font" })
                                         <div class="col-md-10">
                                             @Html.TextBoxFor(m => m.Email, new { @class = "form-control form-control-lg" })
                                             @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
                                     <div class="form-group form-outline mb-4">
-                                        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label raleway-font" })
                                         <div class="col-md-10">
                                             @Html.PasswordFor(m => m.Password, new { @class = "form-control form-control-lg" })
                                             @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
@@ -44,7 +44,7 @@
                                     </div>
                                     <div class="form-group mb-3">
                                         <div class="col-md-offset-2 col-md-10">
-                                            <div class="checkbox">
+                                            <div class="checkbox raleway-font">
                                                 @Html.CheckBoxFor(m => m.RememberMe)
                                                 @Html.LabelFor(m => m.RememberMe)
                                             </div>
@@ -52,16 +52,16 @@
                                     </div>
                                     <div class="form-group mb-3">
                                         <div class="col-md-offset-2 col-md-10">
-                                            <input type="submit" value="Log in" class="btn btn-outline-primary" />
+                                            <input type="submit" value="Log in" class="btn btn-outline-dark raleway-font" />
                                         </div>
                                     </div>
                                     <p>
                                         @Html.ActionLink("Register as a new user", "Register", "Account", new { @style = "text-decoration:none;" })
                                     </p>
                                     @* Enable this once you have account confirmation enabled for password reset functionality
-                                        <p>
-                                            @Html.ActionLink("Forgot your password?", "ForgotPassword")
-                                        </p>*@
+            <p>
+                @Html.ActionLink("Forgot your password?", "ForgotPassword")
+            </p>*@
                                 }
 
 

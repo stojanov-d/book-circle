@@ -7,16 +7,16 @@
 
         <ul class="nav navbar-nav">
             <li>
-                @Html.ActionLink("Hello, " + User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class="nav-link white-text navlinks-size" })
+                @Html.ActionLink("Hello, " + User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class= "nav-link black-text oswald-font navlinks-size" })
             </li>
-            <li><a href="javascript:document.getElementById('logoutForm').submit()" class="nav-link white-text navlinks-size">Log off</a></li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()" class="nav-link black-text oswald-font navlinks-size">Log off</a></li>
         </ul>
     }
 }
 else
 {
     <ul class="nav navbar-nav navbar-right padding-for-partials">
-        <li class="remove-bg">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "white-text nav-link navlinks-size" })</li>
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "white-text nav-link  navlinks-size" })</li>
+        <li class="remove-bg">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "black-text nav-link navlinks-size oswald-font" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "nav-link  navlinks-size black-text oswald-font" })</li>
     </ul>
 }
