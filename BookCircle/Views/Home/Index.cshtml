@@ -43,77 +43,93 @@
             background-color: floralwhite;
         }
 
-        .img-width{
-            width:auto;
-            height:600px;
+        .img-width {
+            width: auto;
+            height: 600px;
         }
 
-        .third-block{
-            padding-left:20px;
-            background-color:burlywood;
-            padding-bottom:30px
+        .third-block {
+            padding-left: 20px;
+            background-color: burlywood;
+            padding-bottom: 30px
         }
-
     </style>
 </head>
 
 <body>
-    <div class="row main-block">
+    <div class="row main-block ">
         <div class="col-md-7 padding100">
-            <div>
-                <h2>Welcome to <span class="black-text oswald-font circle-book">BOOK CIRCLE.</span></h2>
-                <h4 style="text-align:justify">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a type specimen book. It has survived
-                    not only five centuries, but also the leap into electronic
-                </h4>
+            <div class="pb-xxl-5">
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <h2>Welcome to <span class="black-text oswald-font circle-book">BOOK CIRCLE.</span></h2>
+                    <h4 style="text-align:justify">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                        printer took a galley of type and scrambled it to make a type specimen book. It has survived
+                        not only five centuries, but also the leap into electronic
+                    </h4>
+                }
+                else
+                {
+                    <h4 style="text-align:justify">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                        printer took a galley of type and scrambled it to make a type specimen book. It has survived
+                        not only five centuries, but also the leap into electronic
+                    </h4>
+                }
+
             </div>
         </div>
-        <div class="col-md-3">
-            <section id="loginForm" class="login-border p-4">
-                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                {
-                    @Html.AntiForgeryToken()
-                    <h2 class="raleway-font">Log in</h2>
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label raleway-font" })
-                        <div class="col-md-10">
-                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label raleway-font" })
-                        <div class="col-md-10">
-                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <div class="checkbox mb-2 raleway-font">
-                                @Html.CheckBoxFor(m => m.RememberMe)
-                                @Html.LabelFor(m => m.RememberMe)
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <div class="col-md-3">
+                <section id="loginForm" class="login-border p-4">
+                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <h2 class="raleway-font">Log in</h2>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label raleway-font" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Log in" class="btn btn-outline-dark mb-2 raleway-font" />
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label raleway-font" })
+                            <div class="col-md-10">
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            </div>
                         </div>
-                    </div>
-                    <p>
-                        @Html.ActionLink("Dont have an account? - Register", "Register", "Account",new {@style="text-decoration:none;",@class= "raleway-font " })
-                    </p>
-                    @* Enable this once you have account confirmation enabled for password reset functionality
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <div class="checkbox mb-2 raleway-font">
+                                    @Html.CheckBoxFor(m => m.RememberMe)
+                                    @Html.LabelFor(m => m.RememberMe)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Log in" class="btn btn-outline-dark mb-2 raleway-font" />
+                            </div>
+                        </div>
                         <p>
-                            @Html.ActionLink("Forgot your password?", "ForgotPassword")
-                        </p>*@
-                }
-            </section>
-        </div>
+                            @Html.ActionLink("Dont have an account? - Register", "Register", "Account","Account", new { @style = "text-decoration:none;", @class = "raleway-font " })
+                        </p>
+                        @* Enable this once you have account confirmation enabled for password reset functionality
+                            <p>
+                                @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                            </p>*@
+                    }
+                </section>
+            </div>
+        }
+
     </div>
 
     <div class="row second-block">

@@ -19,14 +19,18 @@ namespace BookCircle
             bundles.Add(new Bundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-           // bundles.Add(new Bundle("~/bundles/bootstrap").Include(
-                     // "~/Scripts/bootstrap.min.js"
-                     // ));
+
+            bundles.Add(new Bundle("~/bundles/bootstrap").Include(
+             "~/Scripts/bootbox.js",
+             "~/Scripts/bootstrap.js",
+             "~/Scripts/DataTables/jquery.dataTables.js",
+             "~/Scripts/DataTables/dataTables.bootstrap.js"));
 
             bundles.Add(new Bundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap.min.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/DataTables/css/dataTables.bootstrap.css"));
         }
     }
 }
