@@ -10,7 +10,9 @@ namespace BookCircle.Models
     {
         [Key]
         public int Id { get; set; }
+        [Display(Name = "TEST")]
         public string BookTitle { get; set; }
+        [DataType(DataType.MultilineText)]
         public string BookDescription { get; set; }
         public string BookAuthor { get; set; }
         public string BookPublisher { get; set; }
