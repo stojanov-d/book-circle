@@ -3,56 +3,69 @@
 @{
     ViewBag.Title = "Details";
 }
+<head>
+    <style>
+        body {
+            background-color: floralwhite;
+        }
+    </style>
+</head>
 
-<h2>Details</h2>
+<body class="">
 
-<div>
-    <h4>Book</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.BookTitle)
-        </dt>
+    <div>
+        <h4 class="pt-3 px-4 fw-bold blue-text oswald-font">@Model.BookTitle</h4>
+        <dl class="dl-horizontal p-4">
+            <dt>
+                @*@Html.DisplayNameFor(model => model.BookTitle)*@
+                <span class="fw-bold">Title</span>
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.BookTitle)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.BookTitle)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BookDescription)
-        </dt>
+            <dt>
+                @*@Html.DisplayNameFor(model => model.BookDescription)*@
+                <span class="fw-bold">Description</span>
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.BookDescription)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.BookDescription)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BookAuthor)
-        </dt>
+            <dt>
+                @*@Html.DisplayNameFor(model => model.BookAuthor)*@
+                <span class="fw-bold">Author</span>
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.BookAuthor)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.BookAuthor)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BookPublisher)
-        </dt>
+            <dt>
+                @*@Html.DisplayNameFor(model => model.BookPublisher)*@
+                Published by
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.BookPublisher)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.BookPublisher)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BookRating)
-        </dt>
+            <dt>
+                @*@Html.DisplayNameFor(model => model.BookRating)*@
+                Rating
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.BookRating)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.BookRating)
+            </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </dl>
+    </div>
+    <p class="px-4">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-outline-primary" }) |
+        @Html.ActionLink("Back to List", "Index","Index", new { @class = "btn btn-outline-secondary" })
+    </p>
+</body>
+
