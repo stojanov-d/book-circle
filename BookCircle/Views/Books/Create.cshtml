@@ -19,125 +19,20 @@
             max-width:550px !important;
         }
 
-        .rating {
-            display: flex;
-            flex-direction: row-reverse;
-            justify-content:flex-end
-        }
-
-            .rating > input {
-                display: none
-            }
-
-            .rating > label {
-                position: relative;
-                width: 1em;
-                font-size: 30px;
-                font-weight: 300;
-                color: black;
-                cursor: pointer
-            }
-
-                .rating > label::before {
-                    content: "\2605";
-                    position: absolute;
-                    opacity: 0
-                }
-
-                .rating > label:hover:before,
-                .rating > label:hover ~ label:before {
-                    opacity: 1 !important
-                }
-
-            .rating > input:checked ~ label:before {
-                opacity: 1
-            }
-
-            .rating:hover > input:checked ~ label:before {
-                opacity: 0.4
-            }
+        
 
 
     </style>
 </head>
 
 <body>
-    @*<div class="p-4">
-        <h2>Add a new book</h2>
-        <hr />
-
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
-
-            <div class="form-horizontal">
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group">
-                    @Html.LabelFor(model => model.BookTitle, "Title", htmlAttributes: new { @class = "control-label col-md-2 fw-bold" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.BookTitle, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.BookTitle, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.BookDescription, htmlAttributes: new { @class = "control-label col-md-2 fw-bold" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.BookDescription, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.BookDescription, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.BookAuthor, "Author", htmlAttributes: new { @class = "control-label col-md-2 fw-bold" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.BookAuthor, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.BookAuthor, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.BookPublisher, "Published by", htmlAttributes: new { @class = "control-label col-md-2 fw-bold" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.BookPublisher, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.BookPublisher, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.BookRating, "Rating", htmlAttributes: new { @class = "control-label col-md-2 fw-bold" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.BookRating, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.BookRating, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10 pt-3">
-                        <input type="submit" value="Create" class="btn btn-outline-success" />
-                    </div>
-                </div>
-            </div>
-        }
-
-
-
-
-        <div class="pt-3">
-            @Html.ActionLink("Back to List", "Index", "Index", new { @class = "btn btn-outline-secondary" })
-        </div>
-    </div>*@
-
+   
     <section class="vh-100" style="background-color: #9A616D;">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col col-xl-10">
                     <div class="card floralwhite" style="border-radius: 1rem;">
                         <div class="row g-0">
-                            @*<div class="col-md-6 col-lg-5 d-none d-md-block">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
-                                     alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
-                            </div>*@
                             <div class="d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5 text-black">
                                     <h2>Add a new book</h2>

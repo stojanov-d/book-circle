@@ -11,61 +11,137 @@
     </style>
 </head>
 
-<body class="">
+<body>
 
-    <div>
-        <h4 class="pt-3 px-4 fw-bold blue-text oswald-font">@Model.BookTitle</h4>
-        <dl class="dl-horizontal p-4">
-            <dt>
-                @*@Html.DisplayNameFor(model => model.BookTitle)*@
-                <span class="fw-bold">Title</span>
-            </dt>
+    <section class="vh-100" style="background-color: #9A616D;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-xl-10">
+                    <div class="card floralwhite" style="border-radius: 1rem;">
+                        <div class="row g-0">
+                            <div class="d-flex align-items-center">
+                                <div class="card-body p-4 p-lg-5 text-black">
+                                    <h2 class="pt-3 px-4 fw-bold oswald-font">Details for <span class="blue-text">@Model.BookTitle</span></h2>
+                                    <hr />
+                                    <dl class="dl-horizontal p-4">
+                                        <dt>
+                                            @*@Html.DisplayNameFor(model => model.BookTitle)*@
+                                            <span class="fw-bold fs-4">Title</span>
+                                        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.BookTitle)
-            </dd>
+                                        <dd>
+                                            <span class="fs-5">@Html.DisplayFor(model => model.BookTitle)</span>
+                                        </dd>
 
-            <dt>
-                @*@Html.DisplayNameFor(model => model.BookDescription)*@
-                <span class="fw-bold">Description</span>
-            </dt>
+                                        <dt>
+                                            @*@Html.DisplayNameFor(model => model.BookDescription)*@
+                                            <span class="fw-bold fs-4">Description</span>
+                                        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.BookDescription)
-            </dd>
+                                        <dd>
+                                            <span class="fs-5">@Html.DisplayFor(model => model.BookDescription)</span>
+                                        </dd>
 
-            <dt>
-                @*@Html.DisplayNameFor(model => model.BookAuthor)*@
-                <span class="fw-bold">Author</span>
-            </dt>
+                                        <dt>
+                                            @*@Html.DisplayNameFor(model => model.BookAuthor)*@
+                                            <span class="fw-bold fs-4">Author</span>
+                                        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.BookAuthor)
-            </dd>
+                                        <dd>
+                                            <span class="fs-5">@Html.DisplayFor(model => model.BookAuthor)</span>
+                                        </dd>
 
-            <dt>
-                @*@Html.DisplayNameFor(model => model.BookPublisher)*@
-                Published by
-            </dt>
+                                        <dt>
+                                            @*@Html.DisplayNameFor(model => model.BookPublisher)*@
+                                            <span class="fw-bold fs-4">Published by</span>
+                                        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.BookPublisher)
-            </dd>
+                                        <dd>
+                                            <span class="fs-5">@Html.DisplayFor(model => model.BookPublisher)</span>
+                                        </dd>
 
-            <dt>
-                @*@Html.DisplayNameFor(model => model.BookRating)*@
-                Rating
-            </dt>
+                                        <dt>
+                                            @*@Html.DisplayNameFor(model => model.BookRating)*@
+                                            <span class="fw-bold fs-4">Rating</span>
+                                        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.BookRating)
-            </dd>
+                                        <dd>
+                                            @if (Model.BookRating == 1)
+                                            {
+                                                <div class="form-group">
+                                                    <div class="col-md-10">
+                                                        <div class="rating">
+                                                            <span>☆</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                            else if (Model.BookRating == 2)
+                                            {
+                                                <div class="form-group">
+                                                    <div class="col-md-10">
+                                                        <div class="rating">
+                                                            <span>☆</span>
+                                                            <span>☆</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                            else if (Model.BookRating == 3)
+                                            {
+                                                <div class="form-group">
+                                                    <div class="col-md-10">
+                                                        <div class="rating">
+                                                            <span>☆</span>
+                                                            <span>☆</span>
+                                                            <span>☆</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                            else if (Model.BookRating == 4)
+                                            {
+                                                <div class="form-group">
+                                                    <div class="col-md-10">
+                                                        <div class="rating">
+                                                            <span>☆</span>
+                                                            <span>☆</span>
+                                                            <span>☆</span>
+                                                            <span>☆</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                            else if (Model.BookRating == 5)
+                                            {
+                                                <div class="form-group">
+                                                    <div class="col-md-10">
+                                                        <div class="rating">
+                                                            <span>☆</span>
+                                                            <span>☆</span>
+                                                            <span>☆</span>
+                                                            <span>☆</span>
+                                                            <span>☆</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        </dd>
 
-        </dl>
-    </div>
-    <p class="px-4">
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-outline-primary" }) |
-        @Html.ActionLink("Back to List", "Index","Index", new { @class = "btn btn-outline-secondary" })
-    </p>
+                                    </dl>
+                                    <p class="px-4">
+                                        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-outline-primary" }) 
+                                        @Html.ActionLink("Back to List", "Index", "Index", new { @class = "btn btn-outline-secondary mx-2" })
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 </body>
 
