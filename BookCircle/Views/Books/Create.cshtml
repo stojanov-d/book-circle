@@ -62,7 +62,7 @@
 </head>
 
 <body>
-    <div class="p-4">
+    @*<div class="p-4">
         <h2>Add a new book</h2>
         <hr />
 
@@ -126,7 +126,7 @@
         <div class="pt-3">
             @Html.ActionLink("Back to List", "Index", "Index", new { @class = "btn btn-outline-secondary" })
         </div>
-    </div>
+    </div>*@
 
     <section class="vh-100" style="background-color: #9A616D;">
         <div class="container py-5 h-100">
@@ -181,23 +181,41 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    @*<div class="form-group">
                                         @Html.LabelFor(model => model.BookRating, "Rating", htmlAttributes: new { @class = "control-label col-md-2 fw-bold" })
                                         <div class="col-md-10">
                                             @Html.EditorFor(model => model.BookRating, new { htmlAttributes = new { @class = "form-control" } })
                                             @Html.ValidationMessageFor(model => model.BookRating, "", new { @class = "text-danger" })
                                         </div>
 
-                                    </div>
+                                    </div>*@
 
-                                    <div class="form-group">
+                                    @*<div class="form-group">
                                         @Html.LabelFor(model => model.BookRating, "Rating", htmlAttributes: new { @class = "control-label col-md-2 fw-bold" })
                                         <div class="col-md-10">
                                             <div class="rating">
                                                 <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
                                             </div>
                                         </div>
+                                    </div>*@
 
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.BookRating, "Rating", htmlAttributes: new { @class = "control-label col-md-2 fw-bold" })
+                                        <div class="col-md-10">
+                                            <div class="rating">
+                                                @Html.RadioButtonFor(model => model.BookRating, 5, htmlAttributes: new { id = "5", name = "rating" })
+                                                @Html.Label("☆", new { @for = "5" })
+                                                @Html.RadioButtonFor(model => model.BookRating, 4, htmlAttributes: new { id = "4", name = "rating" })
+                                                @Html.Label("☆", new { @for = "4" })
+                                                @Html.RadioButtonFor(model => model.BookRating, 3, htmlAttributes: new { id = "3", name = "rating" })
+                                                @Html.Label("☆", new { @for = "3" })
+                                                @Html.RadioButtonFor(model => model.BookRating, 2, htmlAttributes: new { id = "2", name = "rating" })
+                                                @Html.Label("☆", new { @for = "2" })
+                                                @Html.RadioButtonFor(model => model.BookRating, 1, htmlAttributes: new { id = "1", name = "rating" })
+                                                @Html.Label("☆", new { @for = "1" })
+
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div class="form-group">
