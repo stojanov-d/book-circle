@@ -386,6 +386,7 @@
     <Content Include="fonts\Medio.ttf" />
     <Content Include="fonts\Medio.woff" />
     <Content Include="fonts\Medio.woff2" />
+    <Content Include="imgs\BookCircleLogo.png" />
     <Content Include="Scripts\bootbox.js" />
     <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />

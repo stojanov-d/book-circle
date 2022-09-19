@@ -11,9 +11,9 @@
             <div class="col col-xl-10">
                 <div class="card" style="border-radius: 1rem;">
                     <div class="row g-0">
-                        <div class="col-md-6 col-lg-5 d-none d-md-block">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
-                                 alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                        <div class="col-md-6 col-lg-5 d-none d-md-block bg-for-logins">
+                            @*<img src="https://i.ibb.co/6FyqzPC/book-circle.png"
+                                 alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />*@
                         </div>
                         <div class="col-md-6 col-lg-7 d-flex align-items-center">
                             <div class="card-body p-4 p-lg-5 text-black">
@@ -21,7 +21,6 @@
                                 {
                                     @Html.AntiForgeryToken()
                                     <div class="d-flex align-items-center mb-3 pb-1">
-                                        <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
                                         <span class="h1 fw-bold mb-0 raleway-font">Log in</span>
                                     </div>
 
@@ -31,7 +30,7 @@
                                     <div class="form-group form-outline mb-4">
                                         @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label raleway-font" })
                                         <div class="col-md-10">
-                                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control form-control-lg" })
+                                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control form-control-lg", placeholder = "example@email.com" })
                                             @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                                         </div>
                                     </div>

@@ -166,6 +166,13 @@
             .rating:hover > input:checked ~ label:before {
                 opacity: 0.4
             }
+        .bg-for-logins {
+            background-image: url("https://i.ibb.co/HByqP5Y/book-circle-1.png");
+            background-size: initial;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
     </style>
 
 
@@ -182,8 +189,9 @@
                     @Html.ActionLink("BOOK CIRCLE", "Index", "Home", "Home", new { @class = " navbar-brand black-text oswald-font" })
                     @if (User.Identity.IsAuthenticated)
                     {
-                        @Html.ActionLink("BOOKS", "Index", "Books","Books", new { @class = "nav-link navlinks-size2 black-text2 oswald-font" })
-                        @Html.ActionLink("USERS", "Index", "Books","Books", new { @class = "nav-link navlinks-size2 black-text2 oswald-font" })
+                        @Html.ActionLink("HOME", "Index", "Home", "Home", new { @class = "nav-link navlinks-size2 black-text2 oswald-font" })
+                        @Html.ActionLink("BOOKS", "Index", "Books", "Books", new { @class = "nav-link navlinks-size2 black-text2 oswald-font" })
+                        @Html.ActionLink("ABOUT", "Index", "Books", "Books", new { @class = "nav-link navlinks-size2 black-text2 oswald-font" })
                     }
                 </div>
             </div>
