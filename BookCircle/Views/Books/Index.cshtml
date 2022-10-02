@@ -135,9 +135,9 @@
                         }
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-outline-primary" }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-outline-info" }) |
-                        <button book-id="@item.Id" class="btn btn-outline-danger js-delete-book">Delete</button>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-outline-primary mb-2" }) 
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-outline-info" }) 
+                        <button book-id="@item.Id" class="btn btn-outline-danger js-delete-book mt-2">Delete</button>
                     </td>
                 </tr>
             }
