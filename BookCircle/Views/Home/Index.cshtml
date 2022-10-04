@@ -1,4 +1,5 @@
 ﻿@using BookCircle.Models
+@using Microsoft.AspNet.Identity
 @model LoginViewModel
 @{
     ViewBag.Title = "Home Page";
@@ -82,22 +83,31 @@
             <div class="pb-xxl-5">
                 @if (!User.Identity.IsAuthenticated)
                 {
-                    <h2>Welcome to <span class="black-text oswald-font circle-book">BOOK CIRCLE.</span></h2>
+                    <h2>What is <span class="black-text oswald-font circle-book">BOOK CIRCLE ?</span></h2>
                     <h4 style="text-align:justify">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book. It has survived
-                        not only five centuries, but also the leap into electronic
+                        Book Circle exists to serve as a consolidated information resource for the reading public and a link between the worlds of literary creation,
+                        criticism and consumption. We hope it will bring more attention to great books and great criticism.
                     </h4>
+
                 }
                 else
                 {
-                    <h4 style="text-align:justify">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book. It has survived
-                        not only five centuries, but also the leap into electronic
-                    </h4>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <h2>Welcome, @User.Identity.GetUserName()</h2>
+                            <h4 style="text-align:justify">
+                                We’re dedicated to the idea that writing about books and reading should be just as diverse as books and readers are.
+                                We began with the goal of leading a new discussion around books, readers, and publishing.
+
+                                Please head to the Books tab to add new Books.
+                            </h4>
+                        </div>
+                        <div class="col-md-2">
+                            @Html.ActionLink("TEST", "Index", "Home", new { @class = "btn btn-primary" })
+
+                        </div>
+                    </div>
+
                 }
 
             </div>
@@ -180,7 +190,7 @@
                         <h5>Why choose Book Circle</h5>
                         <p>Easily adaptable</p>
                         <p>Free to use</p>
-                        <p>Many functionalities</p>
+                        <p>Many features</p>
                     </div>
                 </div>
             </div>
@@ -196,40 +206,41 @@
     </div>
 
     <div class="row third-block">
+        <h2 class="text-center mt-3 raleway-font fw-bold">TOP TRENDING BOOKS</h2>
         <div class="row row-cols-3 row-cols-md-5 g-4 d-flex justify-content-md-around">
             <div class="col">
                 <div class="card h-100">
-                    <img src="https://i.ibb.co/6FyqzPC/book-circle.png" class="card-img-top"  alt="...">
+                    <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1551497961i/42859805.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 class="card-title">All The Flowers in Paris</h5>
+                        <p class="card-text">Two women are connected across time by the city of Paris, a mysterious journal, and shocking secrets, sweeping from World War II to the present--for readers of Sarah's Key.</p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
+                        <small class="text-muted">Top Selling</small>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card h-100">
-                    <img src="https://i.ibb.co/6FyqzPC/book-circle.png" class="card-img-top" alt="...">
+                    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320438693l/673710.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <h5 class="card-title">To Dance With Kings</h5>
+                        <p class="card-text">On a May morning in 1664, in the small village of Versailles, as hundreds of young aristocrats are coming to pay court to King Louis XIV, a peasant fan-maker gives birth to her first and only child ... </p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
+                        <small class="text-muted">Top Rated</small>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card h-100">
-                    <img src="https://i.ibb.co/6FyqzPC/book-circle.png" class="card-img-top" alt="...">
+                    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1384780111l/18814085.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <h5 class="card-title">The Storyteller</h5>
+                        <p class="card-text">Sage Singer is a baker. She works through the night, preparing the day’s breads and pastries, trying to escape a reality of loneliness, bad memories, and the shadow of her mother’s death. When Josef Weber, an elderly man ...</p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
+                        <small class="text-muted">Most Popular</small>
                     </div>
                 </div>
             </div>
@@ -308,8 +319,8 @@
                     <!-- Grid column -->
                     <!-- Grid column -->
                     <!--<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">-->
-                        <!-- Links -->
-                        <!--<h6 class="text-uppercase fw-bold mb-4">
+                    <!-- Links -->
+                    <!--<h6 class="text-uppercase fw-bold mb-4">
                             Useful links
                         </h6>
                         <p>
