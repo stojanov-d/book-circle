@@ -49,6 +49,11 @@
             height: 450px;
         }
 
+        .margin-left-btn{
+            margin-left:340px !important;
+            margin-top:70px !important;
+        }
+
         .third-block {
             padding-left: 20px;
             background-color: burlywood;
@@ -60,6 +65,13 @@
             max-height: 600px;
             object-fit: cover;
             opacity: 1;
+        }
+
+        .btn-padding-newbook {
+            width:250px !important;
+            height:100px !important;
+            padding-top:35px !important;
+            font-weight:bold !important;
         }
 
         .img-opacity {
@@ -93,9 +105,9 @@
                 else
                 {
                     <div class="row">
-                        <div class="col-md-10">
+                        <div class="col-md-10 ">
                             <h2>Welcome, @User.Identity.GetUserName()</h2>
-                            <h4 style="text-align:justify">
+                            <h4 style="text-align: justify;">
                                 We’re dedicated to the idea that writing about books and reading should be just as diverse as books and readers are.
                                 We began with the goal of leading a new discussion around books, readers, and publishing.
 
@@ -103,7 +115,7 @@
                             </h4>
                         </div>
                         <div class="col-md-2">
-                            @Html.ActionLink("TEST", "Index", "Home", new { @class = "btn btn-primary" })
+                            @Html.ActionLink("ADD A NEW BOOK!", "Index", "Books","Books", new { @class = "btn btn-dark margin-left-btn btn-padding-newbook raleway-font" })
 
                         </div>
                     </div>
